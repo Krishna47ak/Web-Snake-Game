@@ -1,0 +1,107 @@
+* {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;     /*Why making overall overflow hidden works but not individually ??*/
+}
+
+.container {
+    background-image: url("../IMAGES/SnakeBackground.jpg");
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 100vh;
+    background-size: 216vh 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Takecare of the css of the parent div */
+
+.snake1 {
+    align-items: unset;
+    justify-content: right;
+    min-width: none;
+    width: 1600px;
+    height: 500 px;
+    display: grid;
+    background-size: none;
+    position: relative;
+    overflow-x: visible;
+}
+
+.snake1 img {
+    width: 200px;
+    height: 500px;
+}
+
+.snake2 {
+    display: grid;
+    min-width: auto;
+    width: 2000px;
+    height: 750px;
+    background-size: auto;
+    position: absolute;
+}
+
+
+.snake2 img {
+    width: 500px;
+    height: 500px;
+    /* To rotate an image */
+    transform: rotate(35deg);  
+}
+
+
+/* When two images ovelap put one position as relative and other as absolute */
+#board {
+    display: grid;
+    background: linear-gradient(#4ddc48, #173c32);
+    width: 159vmin;
+    height: 71vmin;
+    border: 3px solid rgb(131, 132, 131);
+    position: absolute;
+    grid-template-columns: repeat(35,1fr);
+    grid-template-rows: repeat(20,1fr);
+}
+
+#scoreBox {
+    position: absolute;
+    color: white;
+    right: 10px;
+    top: 20px;
+    font-size: 50px;
+    background: linear-gradient(rgb(0, 255, 0),white);
+    padding: 0px 7px 0px 5px;
+    border-radius: 15px;
+    text-shadow: 0 0 5px black;
+}
+
+#hiscore {
+    position: absolute;
+    color: white;
+    text-align: center;
+    top: 20px;
+    font-size: 50px;
+    background: linear-gradient(rgb(0, 255, 0),white);
+    padding: 0px 7px 0px 5px;
+    border-radius: 15px;
+    text-shadow: 3px 2px 2px rgb(0, 0, 0);
+}
+
+.head {
+    border-radius: 100%;
+    background: linear-gradient(to bottom right , blue,rgb(18, 215, 249));  /*Linear gradient works on background only*/
+    border: 0.25vmin solid black;
+    transform: scale(1.05);  /*To adjust size*/
+}
+
+.snake {
+    border-radius: 100%;
+    background: linear-gradient(to bottom right , rgb(35, 241, 35),rgb(2, 145, 255));
+    border:  0.25vmin solid rgb(31, 255, 43);
+}
+
+.food {
+    border-radius: 5px;
+    background-color: red;
+}
